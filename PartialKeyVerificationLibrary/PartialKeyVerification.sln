@@ -13,9 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp.csproj", "{2F1EE1C7-7A97-4BC4-A070-1E13A9E12B7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialKeyVerification.KeyGen", "PartialKeyVerification.KeyGen\PartialKeyVerification.KeyGen.csproj", "{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://192.168.8.23:8080/
 		SccLocalPath0 = .
@@ -28,6 +30,9 @@ Global
 		SccProjectUniqueName3 = PartialKeyVerification\\PartialKeyVerification.csproj
 		SccProjectName3 = PartialKeyVerification
 		SccLocalPath3 = PartialKeyVerification
+		SccProjectUniqueName4 = PartialKeyVerification.KeyGen\\PartialKeyVerification.KeyGen.csproj
+		SccProjectName4 = PartialKeyVerification.KeyGen
+		SccLocalPath4 = PartialKeyVerification.KeyGen
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = PartialKeyVerification.vsmdi
@@ -51,6 +56,10 @@ Global
 		{2F1EE1C7-7A97-4BC4-A070-1E13A9E12B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F1EE1C7-7A97-4BC4-A070-1E13A9E12B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F1EE1C7-7A97-4BC4-A070-1E13A9E12B7C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
