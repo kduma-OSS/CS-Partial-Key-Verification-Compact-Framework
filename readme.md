@@ -1,7 +1,7 @@
 **This is fork of [cuda/Partial-Key-Verification](https://github.com/cuda/Partial-Key-Verification) ported for .NET Compact Framework 3.5**. Compile using Visual Studio 2008 Professional with installed SDK for Windows Mobile 6. 
 
 Demo app attached:
-![Demo app screenshot](assets/demo_app.jpg)
+![Demo app screenshot](demo_app.jpg)
 
 
 Partial Key Verification Library
