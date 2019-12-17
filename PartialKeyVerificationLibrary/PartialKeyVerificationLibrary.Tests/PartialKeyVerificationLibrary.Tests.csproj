@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratedCodeTest.cs" />
+    <Compile Include="GeneratedLongCodeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VerificationTest.cs" />
   </ItemGroup>
@@ -58,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="demo.pkvk" />
+    <None Include="demo_long.pkvk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

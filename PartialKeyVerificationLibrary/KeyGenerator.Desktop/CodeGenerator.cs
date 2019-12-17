@@ -60,16 +60,29 @@ namespace KeyGenerator.Desktop
                 .Cast<KeyListElement>()
                 .Select(element => element.Index);
 
+            var enabledOptions = optionsCheckedListBox.CheckedItems
+                .Cast<string>()
+                .ToList();
+
             Generator.SetVerifiedKeys(enabledKeys);
-            Generator.ValidateUsername = true;
-//            Generator.BlacklistedSerials = new List<uint> {366791766, 123456};
+            Generator.ValidateUsername = enabledOptions.Contains("Validate Username");
+
+            if (!enabledOptions.Contains("Check Blacklist"))
+                Generator.BlacklistedSerials = new List<uint>();
+            else
+                Generator.BlacklistedSerials = new List<uint> {0, 1, 2, 3};
 
             generatedCodeTextBox.Text = Generator.ToString();
         }
 
         private void verifiedKeysCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            BeginInvoke((MethodInvoker)(GenerateCode));            
+            BeginInvoke((MethodInvoker)(GenerateCode));        
+        }
+
+        private void optionsCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            BeginInvoke((MethodInvoker)(GenerateCode));
         }
     }
 }

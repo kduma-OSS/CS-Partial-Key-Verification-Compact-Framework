@@ -79,7 +79,7 @@ namespace KeyGenerator.Desktop
         {
             seedTextBox.Text = "";
             generatedKeyMaskedTextBox.Text = "";
-            generatedKeyMaskedTextBox.Mask = "";
+//            generatedKeyMaskedTextBox.Mask = "";
         }
 
         private bool ValidateForm()
@@ -96,7 +96,7 @@ namespace KeyGenerator.Desktop
         {
             var seed = PartialKeyValidator.GetSerialNumberFromSeed(userNameTextBox.Text);
             seedTextBox.Text = seed.ToString(CultureInfo.InvariantCulture);
-            generatedKeyMaskedTextBox.Mask = _definition.Mask;
+//            generatedKeyMaskedTextBox.Mask = _definition.Mask;
             generatedKeyMaskedTextBox.Text = _generator.Generate(seed);
         }
 

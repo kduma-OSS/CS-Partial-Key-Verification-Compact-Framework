@@ -96,7 +96,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.verifiedKeysGroupBox);
             this.splitContainer2.Panel2.Padding = new System.Windows.Forms.Padding(10);
             this.splitContainer2.Size = new System.Drawing.Size(224, 502);
-            this.splitContainer2.SplitterDistance = 156;
+            this.splitContainer2.SplitterDistance = 101;
             this.splitContainer2.TabIndex = 0;
             // 
             // optionsGroupBox
@@ -105,7 +105,7 @@
             this.optionsGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.optionsGroupBox.Location = new System.Drawing.Point(10, 10);
             this.optionsGroupBox.Name = "optionsGroupBox";
-            this.optionsGroupBox.Size = new System.Drawing.Size(204, 136);
+            this.optionsGroupBox.Size = new System.Drawing.Size(204, 81);
             this.optionsGroupBox.TabIndex = 2;
             this.optionsGroupBox.TabStop = false;
             this.optionsGroupBox.Text = "Enabled Options";
@@ -113,13 +113,16 @@
             // optionsCheckedListBox
             // 
             this.optionsCheckedListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionsCheckedListBox.Enabled = false;
             this.optionsCheckedListBox.FormattingEnabled = true;
             this.optionsCheckedListBox.IntegralHeight = false;
+            this.optionsCheckedListBox.Items.AddRange(new object[] {
+            "Validate Username",
+            "Check Blacklist"});
             this.optionsCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.optionsCheckedListBox.Name = "optionsCheckedListBox";
-            this.optionsCheckedListBox.Size = new System.Drawing.Size(198, 117);
+            this.optionsCheckedListBox.Size = new System.Drawing.Size(198, 62);
             this.optionsCheckedListBox.TabIndex = 0;
+            this.optionsCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.optionsCheckedListBox_ItemCheck);
             // 
             // verifiedKeysGroupBox
             // 
@@ -127,7 +130,7 @@
             this.verifiedKeysGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.verifiedKeysGroupBox.Location = new System.Drawing.Point(10, 10);
             this.verifiedKeysGroupBox.Name = "verifiedKeysGroupBox";
-            this.verifiedKeysGroupBox.Size = new System.Drawing.Size(204, 322);
+            this.verifiedKeysGroupBox.Size = new System.Drawing.Size(204, 377);
             this.verifiedKeysGroupBox.TabIndex = 1;
             this.verifiedKeysGroupBox.TabStop = false;
             this.verifiedKeysGroupBox.Text = "Verified Keys";
@@ -140,7 +143,7 @@
             this.verifiedKeysCheckedListBox.IntegralHeight = false;
             this.verifiedKeysCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.verifiedKeysCheckedListBox.Name = "verifiedKeysCheckedListBox";
-            this.verifiedKeysCheckedListBox.Size = new System.Drawing.Size(198, 303);
+            this.verifiedKeysCheckedListBox.Size = new System.Drawing.Size(198, 358);
             this.verifiedKeysCheckedListBox.TabIndex = 0;
             this.verifiedKeysCheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.verifiedKeysCheckedListBox_ItemCheck);
             // 

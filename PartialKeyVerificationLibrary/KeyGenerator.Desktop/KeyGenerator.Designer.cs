@@ -32,7 +32,6 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.loadKeyDefinitionButton = new System.Windows.Forms.Button();
-            this.generatedKeyMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.seedTextBox = new System.Windows.Forms.TextBox();
             this.keyDefinitionTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
@@ -44,10 +43,11 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.keyDefinitionOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.generateCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generatedKeyMaskedTextBox = new System.Windows.Forms.TextBox();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -65,8 +65,8 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.loadKeyDefinitionButton);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.generatedKeyMaskedTextBox);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.loadKeyDefinitionButton);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.seedTextBox);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.keyDefinitionTextBox);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.userNameTextBox);
@@ -74,11 +74,11 @@
             this.toolStripContainer1.ContentPanel.Controls.Add(this.seedLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.keyDefinitionLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.userNameLabel);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(504, 125);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(515, 202);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(504, 171);
+            this.toolStripContainer1.Size = new System.Drawing.Size(515, 248);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -91,31 +91,20 @@
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(504, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(515, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // loadKeyDefinitionButton
             // 
             this.loadKeyDefinitionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadKeyDefinitionButton.Location = new System.Drawing.Point(467, 12);
+            this.loadKeyDefinitionButton.Location = new System.Drawing.Point(478, 12);
             this.loadKeyDefinitionButton.Name = "loadKeyDefinitionButton";
             this.loadKeyDefinitionButton.Size = new System.Drawing.Size(25, 23);
             this.loadKeyDefinitionButton.TabIndex = 5;
             this.loadKeyDefinitionButton.Text = "...";
             this.loadKeyDefinitionButton.UseVisualStyleBackColor = true;
             this.loadKeyDefinitionButton.Click += new System.EventHandler(this.loadKeyDefinitionButton_Click);
-            // 
-            // generatedKeyMaskedTextBox
-            // 
-            this.generatedKeyMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.generatedKeyMaskedTextBox.Enabled = false;
-            this.generatedKeyMaskedTextBox.Location = new System.Drawing.Point(108, 92);
-            this.generatedKeyMaskedTextBox.Name = "generatedKeyMaskedTextBox";
-            this.generatedKeyMaskedTextBox.ReadOnly = true;
-            this.generatedKeyMaskedTextBox.Size = new System.Drawing.Size(384, 20);
-            this.generatedKeyMaskedTextBox.TabIndex = 4;
             // 
             // seedTextBox
             // 
@@ -127,7 +116,7 @@
             this.seedTextBox.Location = new System.Drawing.Point(108, 66);
             this.seedTextBox.Name = "seedTextBox";
             this.seedTextBox.ReadOnly = true;
-            this.seedTextBox.Size = new System.Drawing.Size(384, 20);
+            this.seedTextBox.Size = new System.Drawing.Size(395, 20);
             this.seedTextBox.TabIndex = 2;
             // 
             // keyDefinitionTextBox
@@ -138,7 +127,7 @@
             this.keyDefinitionTextBox.Location = new System.Drawing.Point(108, 14);
             this.keyDefinitionTextBox.Name = "keyDefinitionTextBox";
             this.keyDefinitionTextBox.ReadOnly = true;
-            this.keyDefinitionTextBox.Size = new System.Drawing.Size(353, 20);
+            this.keyDefinitionTextBox.Size = new System.Drawing.Size(364, 20);
             this.keyDefinitionTextBox.TabIndex = 1;
             this.keyDefinitionTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
@@ -151,7 +140,7 @@
             this.errorProvider.SetIconPadding(this.userNameTextBox, 5);
             this.userNameTextBox.Location = new System.Drawing.Point(108, 40);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(384, 20);
+            this.userNameTextBox.Size = new System.Drawing.Size(395, 20);
             this.userNameTextBox.TabIndex = 1;
             this.userNameTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
@@ -198,7 +187,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(504, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(515, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -227,6 +216,14 @@
             this.openDefinitionToolStripMenuItem.Text = "&Open Definition";
             this.openDefinitionToolStripMenuItem.Click += new System.EventHandler(this.loadKeyDefinitionButton_Click);
             // 
+            // generateCodeToolStripMenuItem
+            // 
+            this.generateCodeToolStripMenuItem.Enabled = false;
+            this.generateCodeToolStripMenuItem.Name = "generateCodeToolStripMenuItem";
+            this.generateCodeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.generateCodeToolStripMenuItem.Text = "&Generate Code";
+            this.generateCodeToolStripMenuItem.Click += new System.EventHandler(this.generateCodeToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -246,23 +243,27 @@
             this.keyDefinitionOpenFileDialog.SupportMultiDottedExtensions = true;
             this.keyDefinitionOpenFileDialog.Title = "Select Key Definition File";
             // 
-            // generateCodeToolStripMenuItem
+            // generatedKeyMaskedTextBox
             // 
-            this.generateCodeToolStripMenuItem.Enabled = false;
-            this.generateCodeToolStripMenuItem.Name = "generateCodeToolStripMenuItem";
-            this.generateCodeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.generateCodeToolStripMenuItem.Text = "&Generate Code";
-            this.generateCodeToolStripMenuItem.Click += new System.EventHandler(this.generateCodeToolStripMenuItem_Click);
+            this.generatedKeyMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.generatedKeyMaskedTextBox.Location = new System.Drawing.Point(108, 95);
+            this.generatedKeyMaskedTextBox.Multiline = true;
+            this.generatedKeyMaskedTextBox.Name = "generatedKeyMaskedTextBox";
+            this.generatedKeyMaskedTextBox.ReadOnly = true;
+            this.generatedKeyMaskedTextBox.Size = new System.Drawing.Size(395, 94);
+            this.generatedKeyMaskedTextBox.TabIndex = 6;
             // 
             // KeyGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 171);
+            this.ClientSize = new System.Drawing.Size(515, 248);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1000, 205);
+            this.MaximumSize = new System.Drawing.Size(1000, 2005);
             this.MinimumSize = new System.Drawing.Size(250, 205);
             this.Name = "KeyGenerator";
             this.Text = "PKV Key Generator";
@@ -295,7 +296,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private System.Windows.Forms.MaskedTextBox generatedKeyMaskedTextBox;
         private System.Windows.Forms.Button loadKeyDefinitionButton;
         private System.Windows.Forms.TextBox keyDefinitionTextBox;
         private System.Windows.Forms.Label keyDefinitionLabel;
@@ -303,6 +303,7 @@
         private System.Windows.Forms.ToolStripMenuItem openDefinitionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDefinitionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateCodeToolStripMenuItem;
+        private System.Windows.Forms.TextBox generatedKeyMaskedTextBox;
     }
 }
 

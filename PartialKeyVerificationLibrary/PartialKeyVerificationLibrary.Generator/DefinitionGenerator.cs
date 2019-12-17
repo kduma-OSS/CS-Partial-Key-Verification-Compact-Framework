@@ -29,10 +29,17 @@ namespace PartialKeyVerificationLibrary.Generator
 
         private static string MakeMask(KeyDefinition definition)
         {
-            var generator = new PartialKeyGenerator(definition) {Spacing = 0};
+            var mask = new StringBuilder(">");
+            var generator = new PartialKeyGenerator(definition) { Spacing = 0 };
             var codeLength = generator.Generate(0).Length;
 
-            var mask = new StringBuilder(">");
+            if (definition.Spacing == 0)
+            {
+                mask.Append('A', codeLength);
+
+                return mask.ToString();
+            }
+
 
             while (codeLength > 0)
             {
@@ -52,8 +59,29 @@ namespace PartialKeyVerificationLibrary.Generator
             var generator = new PartialKeyGenerator(definition);
             var codeLength = generator.Generate(0).Length;
 
+
+            byte minimumLength;
+            byte maximumLength;
+
+            if (codeLength < 30) {
+                minimumLength = 4;
+                maximumLength = 9;
+            } else if (codeLength < 45) {
+                minimumLength = 6;
+                maximumLength = 10;
+            } else if (codeLength < 60) {
+                minimumLength = 8;
+                maximumLength = 15;
+            } else if (codeLength < 85) {
+                minimumLength = 10;
+                maximumLength = 20;
+            } else {
+                return 0;
+            }
+
             var posibilities = new Dictionary<byte, int>();
-            for (byte optimalLength = 4; optimalLength < 10; optimalLength++)
+
+            for (var optimalLength = minimumLength; optimalLength <= maximumLength; optimalLength++)
             {
                 if (codeLength%optimalLength == 0)
                     return optimalLength;

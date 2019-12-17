@@ -66,11 +66,6 @@
             this.numberOfKeysNumericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.numberOfKeysNumericUpDown.Location = new System.Drawing.Point(155, 12);
-            this.numberOfKeysNumericUpDown.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
             this.numberOfKeysNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
