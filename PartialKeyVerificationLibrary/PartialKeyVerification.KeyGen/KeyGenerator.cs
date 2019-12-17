@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using PartialKeyVerification.Checksum;
+using PartialKeyVerification.Generator;
 using PartialKeyVerification.Hash;
 using System.Runtime.Serialization.Formatters.Binary;
 

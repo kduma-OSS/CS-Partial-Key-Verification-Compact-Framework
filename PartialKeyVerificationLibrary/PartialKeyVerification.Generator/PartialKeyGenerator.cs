@@ -8,8 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using PartialKeyVerification.Checksum;
 using PartialKeyVerification.Hash;
+using PartialKeyVerification;
 
-namespace PartialKeyVerification
+namespace PartialKeyVerification.Generator
 {
     /// <summary>
     /// A Partial Key Verification key generator.

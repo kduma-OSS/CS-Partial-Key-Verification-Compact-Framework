@@ -12,7 +12,7 @@ namespace PartialKeyVerification
     /// <summary>
     /// Utility to convert a byte array to/from a Base 32 string.
     /// </summary>
-    internal static class Base32
+    public static class Base32
     {
         private const string Map = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
 

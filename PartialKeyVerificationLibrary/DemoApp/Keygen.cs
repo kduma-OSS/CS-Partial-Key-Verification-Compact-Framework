@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PartialKeyVerification;
 using PartialKeyVerification.Checksum;
+using PartialKeyVerification.Generator;
 using PartialKeyVerification.Hash;
 
 namespace DemoApp

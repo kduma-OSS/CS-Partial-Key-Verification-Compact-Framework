@@ -15,6 +15,10 @@ namespace PartialKeyVerification.Hash
     {
         private readonly uint _seed;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="seed"></param>
         public Jenkins06(uint seed)
         {
             _seed = seed;

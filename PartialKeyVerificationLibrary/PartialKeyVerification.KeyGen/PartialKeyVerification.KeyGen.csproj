@@ -85,6 +85,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PartialKeyVerification.Generator\PartialKeyVerification.Generator.csproj">
+      <Project>{85DB3670-F5E9-409E-8E3C-C92645CAFF41}</Project>
+      <Name>PartialKeyVerification.Generator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PartialKeyVerification\PartialKeyVerification.csproj">
       <Project>{53048C78-DBCE-49CA-8959-0B78A0010E50}</Project>
       <Name>PartialKeyVerification</Name>
