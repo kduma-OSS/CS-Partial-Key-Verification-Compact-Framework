@@ -54,6 +54,14 @@ namespace PartialKeyVerification.KeyGen
             LoadDefinitionFile(keyDefinitionOpenFileDialog.FileName);
         }
 
+        private void generateCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new CodeGenerator(_definition))
+            {
+                dialog.ShowDialog();
+            }
+        }
+
         private void newDefinitionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dialog = new MakeDefinition())
@@ -84,7 +92,7 @@ namespace PartialKeyVerification.KeyGen
 
         private void GenerateAndSetSeedAndKey()
         {
-            var seed = PartialKeyValidator.GetSerialNumberFromSeed(userNameTextBox.Text).ToString(CultureInfo.InvariantCulture);
+            var seed = PartialKeyValidator.GetSerialNumberFromSeed(userNameTextBox.Text);
             seedTextBox.Text = seed.ToString(CultureInfo.InvariantCulture);
             generatedKeyMaskedTextBox.Mask = _definition.Mask;
             generatedKeyMaskedTextBox.Text = _generator.Generate(seed);
@@ -99,6 +107,7 @@ namespace PartialKeyVerification.KeyGen
             keyDefinitionTextBox.Enabled = true;
             seedTextBox.Enabled = true;
             generatedKeyMaskedTextBox.Enabled = true;
+            generateCodeToolStripMenuItem.Enabled = true;
             userNameTextBox.Focus();
         }
     }
