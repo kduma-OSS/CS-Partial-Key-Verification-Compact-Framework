@@ -12,11 +12,19 @@ namespace PartialKeyVerification.KeyGen
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KeyGenerator());
+
+            KeyGenerator form;
+            if (args.Count() == 1)
+                form = new KeyGenerator(args[0]);
+            else
+                form = new KeyGenerator();
+
+
+            Application.Run(form);
         }
     }
 }

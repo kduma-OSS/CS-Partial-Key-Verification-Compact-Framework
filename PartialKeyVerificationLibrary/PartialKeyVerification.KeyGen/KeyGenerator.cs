@@ -19,15 +19,24 @@ namespace PartialKeyVerification.KeyGen
     {
         private PartialKeyGenerator _generator;
         private KeyDefinition _definition;
+        private readonly string _fileToOpen;
 
         public KeyGenerator()
         {
             InitializeComponent();
-            _generator = new PartialKeyGenerator(new Adler16(), new Jenkins96(), new uint[] {1, 2});// { Spacing = 6 };
+        }
+
+        public KeyGenerator(string fileToOpen)
+        {
+            InitializeComponent();
+            _fileToOpen = fileToOpen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(_fileToOpen))
+                LoadDefinitionFile(_fileToOpen);
+
             if (ValidateForm())
                 GenerateAndSetSeedAndKey();
             else
