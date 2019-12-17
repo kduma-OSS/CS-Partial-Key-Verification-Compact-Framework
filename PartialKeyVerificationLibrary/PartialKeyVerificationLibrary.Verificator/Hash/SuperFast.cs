@@ -5,7 +5,7 @@
 
 using System;
 
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Port of Bob Jenkins' implementation of Paul Hsieh's SuperFast hash.

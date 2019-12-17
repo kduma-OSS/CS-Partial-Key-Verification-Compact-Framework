@@ -5,7 +5,7 @@
 
 using System;
 
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Implementation of the FNV1a hash functions.

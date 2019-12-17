@@ -1,4 +1,4 @@
-﻿namespace DemoApp
+﻿namespace DemoApplication.Mobile
 {
     partial class Keygen
     {

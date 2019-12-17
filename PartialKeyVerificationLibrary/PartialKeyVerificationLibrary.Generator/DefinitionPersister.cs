@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.IO;
 using System.Xml.Serialization;
+using PartialKeyVerification.Generator;
 
-namespace PartialKeyVerification.Generator
+namespace PartialKeyVerificationLibrary.Generator
 {
     static public class DefinitionPersister
     {

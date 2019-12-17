@@ -5,7 +5,7 @@
 
 using System;
 
-namespace PartialKeyVerification.Checksum
+namespace PartialKeyVerificationLibrary.Verificator.Checksum
 {
     /// <summary>
     /// An implementation of the Adler-16 checksum.

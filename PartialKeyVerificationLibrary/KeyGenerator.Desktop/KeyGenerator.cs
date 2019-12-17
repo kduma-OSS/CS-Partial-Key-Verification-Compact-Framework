@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml.Serialization;
-using PartialKeyVerification.Checksum;
 using PartialKeyVerification.Generator;
-using PartialKeyVerification.Hash;
+using PartialKeyVerificationLibrary.Generator;
+using PartialKeyVerificationLibrary.Verificator;
+using CodeGenerator = KeyGenerator.Desktop.CodeGenerator;
 
-namespace PartialKeyVerification.KeyGen
+namespace KeyGenerator.Desktop
 {
     public partial class KeyGenerator : Form
     {

@@ -3,16 +3,16 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
-using System;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
 
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Computes a CRC-32 hash.
     /// This is a port of Michael Barr's public domain CRC code.
     /// See http://www.netrino.com/Connecting/2000-01/index.php
     /// </summary>
-    public sealed class Crc32 : IHash, Checksum.IChecksum32
+    public sealed class Crc32 : IHash, IChecksum32
     {
         private static readonly uint[] CrcTable = CreateCrcTable();
 

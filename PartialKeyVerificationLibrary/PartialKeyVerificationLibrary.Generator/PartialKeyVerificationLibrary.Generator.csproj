@@ -7,8 +7,8 @@
     <ProjectGuid>{85DB3670-F5E9-409E-8E3C-C92645CAFF41}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PartialKeyVerification.Generator</RootNamespace>
-    <AssemblyName>PKV.Generator</AssemblyName>
+    <RootNamespace>PartialKeyVerificationLibrary.Generator</RootNamespace>
+    <AssemblyName>PKVL.Generator</AssemblyName>
     <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PlatformFamilyName>PocketPC</PlatformFamilyName>
     <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>

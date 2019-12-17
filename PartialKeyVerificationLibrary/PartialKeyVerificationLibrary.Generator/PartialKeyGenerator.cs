@@ -6,9 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using PartialKeyVerification.Checksum;
-using PartialKeyVerification.Hash;
 using PartialKeyVerification;
+using PartialKeyVerificationLibrary.Generator;
+using PartialKeyVerificationLibrary.Verificator;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
+using PartialKeyVerificationLibrary.Verificator.Hash;
 
 namespace PartialKeyVerification.Generator
 {

@@ -7,7 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 
-namespace PartialKeyVerification
+namespace PartialKeyVerificationLibrary.Verificator
 {
     /// <summary>
     /// Utility to convert a byte array to/from a Base 32 string.

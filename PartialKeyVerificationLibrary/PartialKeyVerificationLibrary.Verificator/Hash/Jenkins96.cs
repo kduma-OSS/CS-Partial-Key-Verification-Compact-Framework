@@ -5,7 +5,7 @@
 
 using System;
 
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Implements the Bob Jenkins' Lookup2 hash function.

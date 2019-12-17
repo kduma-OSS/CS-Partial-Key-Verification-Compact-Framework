@@ -5,10 +5,10 @@
 
 using System;
 using System.Text;
-using PartialKeyVerification.Checksum;
-using PartialKeyVerification.Hash;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
+using PartialKeyVerificationLibrary.Verificator.Hash;
 
-namespace PartialKeyVerification
+namespace PartialKeyVerificationLibrary.Verificator
 {
     /// <summary>
     /// This class will validate a Partial Key Verification key. A key is valid

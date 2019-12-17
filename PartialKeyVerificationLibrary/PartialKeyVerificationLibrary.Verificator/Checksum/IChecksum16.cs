@@ -3,7 +3,7 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
-namespace PartialKeyVerification.Checksum
+namespace PartialKeyVerificationLibrary.Verificator.Checksum
 {
     /// <summary>
     /// Classes that implement this interface should creates a 16-bit checksum of

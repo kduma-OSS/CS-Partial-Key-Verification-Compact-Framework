@@ -1,4 +1,4 @@
-﻿namespace PartialKeyVerification.KeyGen
+﻿namespace KeyGenerator.Desktop
 {
     partial class CodeGenerator
     {

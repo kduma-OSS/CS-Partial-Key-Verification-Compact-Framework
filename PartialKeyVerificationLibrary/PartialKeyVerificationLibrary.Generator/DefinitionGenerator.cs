@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
+using PartialKeyVerification.Generator;
 
-namespace PartialKeyVerification.Generator
+namespace PartialKeyVerificationLibrary.Generator
 {
     public static class DefinitionGenerator
     {

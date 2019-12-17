@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using PartialKeyVerification.Generator;
+using PartialKeyVerificationLibrary.Generator;
 
-namespace PartialKeyVerification.KeyGen
+namespace KeyGenerator.Desktop
 {
     public partial class MakeDefinition : Form
     {

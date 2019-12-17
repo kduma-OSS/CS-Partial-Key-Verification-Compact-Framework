@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using PartialKeyVerification;
-using PartialKeyVerification.Checksum;
 using PartialKeyVerification.Generator;
-using PartialKeyVerification.Hash;
+using PartialKeyVerificationLibrary.Verificator;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
+using PartialKeyVerificationLibrary.Verificator.Hash;
 
-namespace DemoApp
+namespace DemoApplication.Mobile
 {
     public partial class Keygen : Form
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PartialKeyVerification.Checksum;
-using PartialKeyVerification.Hash;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
+using PartialKeyVerificationLibrary.Verificator.Hash;
 
-namespace PartialKeyVerification.Generator
+namespace PartialKeyVerificationLibrary.Generator
 {
     [Serializable]
     public class KeyDefinition

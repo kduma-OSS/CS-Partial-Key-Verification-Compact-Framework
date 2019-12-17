@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using PartialKeyVerification.Generator;
 
-namespace PartialKeyVerification.Generator
+namespace PartialKeyVerificationLibrary.Generator
 {
     public class CodeGenerator
     {

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PartialKeyVerification;
-using PartialKeyVerification.Checksum;
-using PartialKeyVerification.Hash;
+using PartialKeyVerificationLibrary.Verificator;
+using PartialKeyVerificationLibrary.Verificator.Checksum;
+using PartialKeyVerificationLibrary.Verificator.Hash;
 
-namespace PartialKeyTests
+namespace PartialKeyVerificationLibrary.Tests
 {
     /// <summary>
     /// Summary description for GeneratedCodeTest

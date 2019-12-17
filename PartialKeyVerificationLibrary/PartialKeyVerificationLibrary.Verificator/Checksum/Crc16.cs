@@ -3,9 +3,7 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
-using System;
-
-namespace PartialKeyVerification.Checksum
+namespace PartialKeyVerificationLibrary.Verificator.Checksum
 {
     /// <summary>
     /// Computes a CRC-16 checksum.

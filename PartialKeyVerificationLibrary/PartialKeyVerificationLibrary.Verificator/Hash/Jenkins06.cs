@@ -3,9 +3,7 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
-using System;
-
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Port of Bob Jenkins' Lookup3 hash function.

@@ -8,7 +8,7 @@
     <ProjectGuid>{E8CA160D-F16C-4C5D-B1CC-FDD50EC2335A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PartialKeyVerification.KeyGen</RootNamespace>
+    <RootNamespace>KeyGenerator.Desktop</RootNamespace>
     <AssemblyName>KeyGenerator</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using PartialKeyVerification.Generator;
+using PartialKeyVerificationLibrary.Generator;
 
-namespace PartialKeyVerification.KeyGen
+namespace KeyGenerator.Desktop
 {
     public partial class CodeGenerator : Form
     {
@@ -37,13 +33,13 @@ namespace PartialKeyVerification.KeyGen
         }
 
         public KeyDefinition Definition { get; private set; }
-        public Generator.CodeGenerator Generator { get; private set; }
+        public PartialKeyVerificationLibrary.Generator.CodeGenerator Generator { get; private set; }
 
         public CodeGenerator(KeyDefinition definition)
         {
             InitializeComponent();
             Definition = definition;
-            Generator = new Generator.CodeGenerator(Definition);
+            Generator = new PartialKeyVerificationLibrary.Generator.CodeGenerator(Definition);
         }
 
         private void CodeGenerator_Load(object sender, EventArgs e)

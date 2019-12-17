@@ -3,7 +3,7 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
-namespace PartialKeyVerification.Hash
+namespace PartialKeyVerificationLibrary.Verificator.Hash
 {
     /// <summary>
     /// Classes that implement this interface should create a 32 bit hash
