@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:Setup.KeyGen"
+"ProjectName" = "8:KeyGenerator.Desktop.Setup"
 "LanguageId" = "3:1033"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1033"
@@ -15,38 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3BBF7FC7DFE8FAE31CD79E862DC0B45F"
-        "OwnerKey" = "8:_3BF753A8878B4DE4A3520D88CC77BCCD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3BF753A8878B4DE4A3520D88CC77BCCD"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CC91600F8E1D2750724DE46DFF0A2ACC"
-        "OwnerKey" = "8:_3BF753A8878B4DE4A3520D88CC77BCCD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CC91600F8E1D2750724DE46DFF0A2ACC"
-        "OwnerKey" = "8:_3BBF7FC7DFE8FAE31CD79E862DC0B45F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CC91600F8E1D2750724DE46DFF0A2ACC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3BBF7FC7DFE8FAE31CD79E862DC0B45F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -73,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -89,6 +67,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -118,68 +104,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3BBF7FC7DFE8FAE31CD79E862DC0B45F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:PKV.Generator, Version=1.0.7290.12064, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3BBF7FC7DFE8FAE31CD79E862DC0B45F"
-                    {
-                    "Name" = "8:PKV.Generator.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:PKV.Generator.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_6AE9770AA5CA4AA5A6489566A02DBD40"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CC91600F8E1D2750724DE46DFF0A2ACC"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:PKV, Version=1.0.7290.12064, Culture=neutral, PublicKeyToken=b5c1197010df11c0, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_CC91600F8E1D2750724DE46DFF0A2ACC"
-                    {
-                    "Name" = "8:PKV.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:PKV.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_6AE9770AA5CA4AA5A6489566A02DBD40"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -794,7 +718,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3BF753A8878B4DE4A3520D88CC77BCCD"
             {
-            "SourcePath" = "8:..\\PartialKeyVerification.KeyGen\\obj\\Release\\KeyGenerator.exe"
+            "SourcePath" = "8:..\\KeyGenerator.Desktop\\obj\\Debug\\KeyGenerator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6AE9770AA5CA4AA5A6489566A02DBD40"
