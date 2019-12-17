@@ -53,8 +53,7 @@ namespace PartialKeyVerification.KeyGen
                 return;
 
 
-            var xmlFormat = new XmlSerializer(typeof(KeyDefinition),
-            new Type[] { typeof(Adler16), typeof(Jenkins96) });
+            var xmlFormat = new XmlSerializer(typeof(KeyDefinition));
 
             using (Stream fStream = new FileStream(dialog.FileName, FileMode.Create, FileAccess.Write, FileShare.None))
             {

@@ -20,7 +20,7 @@ namespace PartialKeyVerification.KeyGen
 
         public List<uint> BaseKeys { get; set; }
         public ChecksumType Checksum { get; set; }
-        public IList<HashType> HashFunctions { get; set; }
+        public List<HashType> HashFunctions { get; set; }
 
         public KeyDefinition()
         {}
