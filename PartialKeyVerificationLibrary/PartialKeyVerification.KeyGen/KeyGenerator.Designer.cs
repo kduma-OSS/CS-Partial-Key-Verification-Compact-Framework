@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.generatedKeyTextBox = new System.Windows.Forms.TextBox();
             this.seedTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.generatedKeyLabel = new System.Windows.Forms.Label();
@@ -41,6 +40,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.generatedKeyMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.keyDefinitionLabel = new System.Windows.Forms.Label();
+            this.keyDefinitionTextBox = new System.Windows.Forms.TextBox();
+            this.loadKeyDefinitionButton = new System.Windows.Forms.Button();
+            this.keyDefinitionOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.openDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -58,17 +63,20 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.generatedKeyTextBox);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.loadKeyDefinitionButton);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.generatedKeyMaskedTextBox);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.seedTextBox);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.keyDefinitionTextBox);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.userNameTextBox);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.generatedKeyLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.seedLabel);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.keyDefinitionLabel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.userNameLabel);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(242, 125);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(504, 125);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(242, 171);
+            this.toolStripContainer1.Size = new System.Drawing.Size(504, 171);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -81,51 +89,40 @@
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(242, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(504, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // generatedKeyTextBox
-            // 
-            this.generatedKeyTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.errorProvider.SetIconAlignment(this.generatedKeyTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this.errorProvider.SetIconPadding(this.generatedKeyTextBox, 5);
-            this.generatedKeyTextBox.Location = new System.Drawing.Point(108, 63);
-            this.generatedKeyTextBox.Multiline = true;
-            this.generatedKeyTextBox.Name = "generatedKeyTextBox";
-            this.generatedKeyTextBox.ReadOnly = true;
-            this.generatedKeyTextBox.Size = new System.Drawing.Size(122, 50);
-            this.generatedKeyTextBox.TabIndex = 3;
             // 
             // seedTextBox
             // 
             this.seedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.seedTextBox.Enabled = false;
             this.errorProvider.SetIconAlignment(this.seedTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.errorProvider.SetIconPadding(this.seedTextBox, 5);
-            this.seedTextBox.Location = new System.Drawing.Point(108, 37);
+            this.seedTextBox.Location = new System.Drawing.Point(108, 66);
             this.seedTextBox.Name = "seedTextBox";
             this.seedTextBox.ReadOnly = true;
-            this.seedTextBox.Size = new System.Drawing.Size(122, 20);
+            this.seedTextBox.Size = new System.Drawing.Size(384, 20);
             this.seedTextBox.TabIndex = 2;
             // 
             // userNameTextBox
             // 
             this.userNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.userNameTextBox.Enabled = false;
             this.errorProvider.SetIconAlignment(this.userNameTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.errorProvider.SetIconPadding(this.userNameTextBox, 5);
-            this.userNameTextBox.Location = new System.Drawing.Point(108, 11);
+            this.userNameTextBox.Location = new System.Drawing.Point(108, 40);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(122, 20);
+            this.userNameTextBox.Size = new System.Drawing.Size(384, 20);
             this.userNameTextBox.TabIndex = 1;
             this.userNameTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
             // generatedKeyLabel
             // 
             this.generatedKeyLabel.AutoSize = true;
-            this.generatedKeyLabel.Location = new System.Drawing.Point(12, 66);
+            this.generatedKeyLabel.Location = new System.Drawing.Point(12, 95);
             this.generatedKeyLabel.Name = "generatedKeyLabel";
             this.generatedKeyLabel.Size = new System.Drawing.Size(81, 13);
             this.generatedKeyLabel.TabIndex = 1;
@@ -134,7 +131,7 @@
             // seedLabel
             // 
             this.seedLabel.AutoSize = true;
-            this.seedLabel.Location = new System.Drawing.Point(12, 40);
+            this.seedLabel.Location = new System.Drawing.Point(12, 69);
             this.seedLabel.Name = "seedLabel";
             this.seedLabel.Size = new System.Drawing.Size(35, 13);
             this.seedLabel.TabIndex = 1;
@@ -143,7 +140,7 @@
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Location = new System.Drawing.Point(12, 14);
+            this.userNameLabel.Location = new System.Drawing.Point(12, 43);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(63, 13);
             this.userNameLabel.TabIndex = 1;
@@ -156,13 +153,14 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(242, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(504, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openDefinitionToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
@@ -171,7 +169,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -179,11 +177,69 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // generatedKeyMaskedTextBox
+            // 
+            this.generatedKeyMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.generatedKeyMaskedTextBox.Enabled = false;
+            this.generatedKeyMaskedTextBox.Location = new System.Drawing.Point(108, 92);
+            this.generatedKeyMaskedTextBox.Name = "generatedKeyMaskedTextBox";
+            this.generatedKeyMaskedTextBox.ReadOnly = true;
+            this.generatedKeyMaskedTextBox.Size = new System.Drawing.Size(384, 20);
+            this.generatedKeyMaskedTextBox.TabIndex = 4;
+            // 
+            // keyDefinitionLabel
+            // 
+            this.keyDefinitionLabel.AutoSize = true;
+            this.keyDefinitionLabel.Location = new System.Drawing.Point(12, 17);
+            this.keyDefinitionLabel.Name = "keyDefinitionLabel";
+            this.keyDefinitionLabel.Size = new System.Drawing.Size(75, 13);
+            this.keyDefinitionLabel.TabIndex = 1;
+            this.keyDefinitionLabel.Text = "Key Definition:";
+            // 
+            // keyDefinitionTextBox
+            // 
+            this.keyDefinitionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.keyDefinitionTextBox.Enabled = false;
+            this.keyDefinitionTextBox.Location = new System.Drawing.Point(108, 14);
+            this.keyDefinitionTextBox.Name = "keyDefinitionTextBox";
+            this.keyDefinitionTextBox.ReadOnly = true;
+            this.keyDefinitionTextBox.Size = new System.Drawing.Size(353, 20);
+            this.keyDefinitionTextBox.TabIndex = 1;
+            this.keyDefinitionTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
+            // 
+            // loadKeyDefinitionButton
+            // 
+            this.loadKeyDefinitionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadKeyDefinitionButton.Location = new System.Drawing.Point(467, 12);
+            this.loadKeyDefinitionButton.Name = "loadKeyDefinitionButton";
+            this.loadKeyDefinitionButton.Size = new System.Drawing.Size(25, 23);
+            this.loadKeyDefinitionButton.TabIndex = 5;
+            this.loadKeyDefinitionButton.Text = "...";
+            this.loadKeyDefinitionButton.UseVisualStyleBackColor = true;
+            this.loadKeyDefinitionButton.Click += new System.EventHandler(this.loadKeyDefinitionButton_Click);
+            // 
+            // keyDefinitionOpenFileDialog
+            // 
+            this.keyDefinitionOpenFileDialog.DefaultExt = "pkvk";
+            this.keyDefinitionOpenFileDialog.Filter = "Key Definition Files (.pkvk)|*.pkvk|XML Files (.xml)|*.xml|Text Files (.txt)|*.tx" +
+                "t";
+            this.keyDefinitionOpenFileDialog.SupportMultiDottedExtensions = true;
+            this.keyDefinitionOpenFileDialog.Title = "Select Key Definition FIle";
+            // 
+            // openDefinitionToolStripMenuItem
+            // 
+            this.openDefinitionToolStripMenuItem.Name = "openDefinitionToolStripMenuItem";
+            this.openDefinitionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.openDefinitionToolStripMenuItem.Text = "&Open Definition";
+            this.openDefinitionToolStripMenuItem.Click += new System.EventHandler(this.loadKeyDefinitionButton_Click);
+            // 
             // KeyGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 171);
+            this.ClientSize = new System.Drawing.Size(504, 171);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -216,11 +272,16 @@
         private System.Windows.Forms.Label seedLabel;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.TextBox generatedKeyTextBox;
         private System.Windows.Forms.Label generatedKeyLabel;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.MaskedTextBox generatedKeyMaskedTextBox;
+        private System.Windows.Forms.Button loadKeyDefinitionButton;
+        private System.Windows.Forms.TextBox keyDefinitionTextBox;
+        private System.Windows.Forms.Label keyDefinitionLabel;
+        private System.Windows.Forms.OpenFileDialog keyDefinitionOpenFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem openDefinitionToolStripMenuItem;
     }
 }
 

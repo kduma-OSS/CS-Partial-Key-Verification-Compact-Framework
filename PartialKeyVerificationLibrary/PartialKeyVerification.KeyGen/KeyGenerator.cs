@@ -12,18 +12,18 @@ using System.Xml.Serialization;
 using PartialKeyVerification.Checksum;
 using PartialKeyVerification.Generator;
 using PartialKeyVerification.Hash;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace PartialKeyVerification.KeyGen
 {
     public partial class KeyGenerator : Form
     {
-        private readonly PartialKeyGenerator _generator;
+        private PartialKeyGenerator _generator;
+        private KeyDefinition _definition;
 
         public KeyGenerator()
         {
             InitializeComponent();
-            _generator = new PartialKeyGenerator(new Adler16(), new Jenkins96(), new uint[] { 1, 2, 3, 4, 5, 6 }) { Spacing = 6 };
+            _generator = new PartialKeyGenerator(new Adler16(), new Jenkins96(), new uint[] {1, 2});// { Spacing = 6 };
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,33 +34,16 @@ namespace PartialKeyVerification.KeyGen
                 ClearSeedAndKey();
 
 
-            var def = new KeyDefinition
-            {
-                BaseKeys = new List<uint> {1, 2, 3, 4, 5, 6},
-                Checksum = KeyDefinition.ChecksumType.Adler16,
-                HashFunctions = new List<KeyDefinition.HashType>
-                {
-                    KeyDefinition.HashType.Jenkins96,
-                    KeyDefinition.HashType.Jenkins96,
-                    KeyDefinition.HashType.Jenkins96,
-                    KeyDefinition.HashType.Jenkins96,
-                    KeyDefinition.HashType.Jenkins96,
-                    KeyDefinition.HashType.Jenkins96,
-                }
-            };
+//            var def = DefinitionGenerator.MakeDefinition(3);
+//
+//            var dialog = new SaveFileDialog();
+//            if (dialog.ShowDialog() != DialogResult.OK)
+//                return;
+//
+//            DefinitionPersister.SaveToFile(dialog.FileName, def);
+//
+//            _generator = new PartialKeyGenerator(def);
 
-            var dialog = new SaveFileDialog();
-            if (dialog.ShowDialog() != DialogResult.OK)
-                return;
-
-
-            var xmlFormat = new XmlSerializer(typeof(KeyDefinition));
-
-            using (Stream fStream = new FileStream(dialog.FileName, FileMode.Create, FileAccess.Write, FileShare.None))
-            {
-            xmlFormat.Serialize(fStream, def);
-            }
-            Console.WriteLine("=> Saved car in XML format!");
         }
 
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
@@ -79,13 +62,17 @@ namespace PartialKeyVerification.KeyGen
         private void ClearSeedAndKey()
         {
             seedTextBox.Text = "";
-            generatedKeyTextBox.Text = "";
+            generatedKeyMaskedTextBox.Text = "";
+            generatedKeyMaskedTextBox.Mask = "";
         }
 
         private bool ValidateForm()
         {
-            var isValid = !String.IsNullOrEmpty(userNameTextBox.Text);
-            errorProvider.SetError(userNameTextBox, isValid ? "" : "User Name is required");
+            var isValid = _definition!=null && !String.IsNullOrEmpty(userNameTextBox.Text);
+            if (isValid || _definition == null)
+                errorProvider.SetError(userNameTextBox, "");
+            else
+                errorProvider.SetError(userNameTextBox, "User Name is required");
             return isValid;
         }
 
@@ -93,7 +80,28 @@ namespace PartialKeyVerification.KeyGen
         {
             var seed = PartialKeyValidator.GetSerialNumberFromSeed(userNameTextBox.Text).ToString(CultureInfo.InvariantCulture);
             seedTextBox.Text = seed.ToString(CultureInfo.InvariantCulture);
-            generatedKeyTextBox.Text = _generator.Generate(seed);
+            generatedKeyMaskedTextBox.Mask = _definition.Mask;
+            generatedKeyMaskedTextBox.Text = _generator.Generate(seed);
+        }
+
+        private void loadKeyDefinitionButton_Click(object sender, EventArgs e)
+        {
+            if (keyDefinitionOpenFileDialog.ShowDialog() != DialogResult.OK) return;
+
+            LoadDefinitionFile(keyDefinitionOpenFileDialog.FileName);
+
+            keyDefinitionTextBox.Text = keyDefinitionOpenFileDialog.FileName;
+        }
+
+        private void LoadDefinitionFile(string fileName)
+        {
+            _definition = DefinitionPersister.LoadFromFile(fileName);
+            _generator = new PartialKeyGenerator(_definition);
+            userNameTextBox.Enabled = true;
+            keyDefinitionTextBox.Enabled = true;
+            seedTextBox.Enabled = true;
+            generatedKeyMaskedTextBox.Enabled = true;
+            userNameTextBox.Focus();
         }
     }
 }

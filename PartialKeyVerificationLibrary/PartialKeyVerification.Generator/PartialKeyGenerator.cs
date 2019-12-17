@@ -25,6 +25,18 @@ namespace PartialKeyVerification.Generator
         private readonly IList<IHash> _hashFunctions = new List<IHash>();
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="definition">Serial generation definition</param>
+        public PartialKeyGenerator(KeyDefinition definition)
+        {
+            _baseKeys = definition.GetBaseKeys();
+            _checksum = definition.GetChecksum();
+            _hashFunctions = definition.GetHashFunctions();
+            Spacing = definition.Spacing;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PartialKeyGenerator"/> class.
         /// </summary>
         /// <param name="checksum">The checksum algorithm to use.</param>

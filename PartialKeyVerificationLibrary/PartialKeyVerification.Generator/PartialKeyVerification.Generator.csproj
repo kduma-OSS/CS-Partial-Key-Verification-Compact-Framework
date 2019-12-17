@@ -58,6 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefinitionGenerator.cs" />
+    <Compile Include="DefinitionPersister.cs" />
+    <Compile Include="KeyDefinition.cs" />
     <Compile Include="PartialKeyGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

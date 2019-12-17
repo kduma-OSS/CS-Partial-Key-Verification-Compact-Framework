@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KeyDefinition.cs" />
     <Compile Include="KeyGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
