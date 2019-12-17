@@ -3,6 +3,8 @@
  * Licensed under the Simplified BSD license - see LICENSE.txt
  */
 
+using System;
+
 namespace PartialKeyVerification.Checksum
 {
     /// <summary>
