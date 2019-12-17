@@ -46,6 +46,7 @@
             this.loadKeyDefinitionButton = new System.Windows.Forms.Button();
             this.keyDefinitionOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -160,6 +161,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newDefinitionToolStripMenuItem,
             this.openDefinitionToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -226,7 +228,7 @@
             this.keyDefinitionOpenFileDialog.Filter = "Key Definition Files (.pkvk)|*.pkvk|XML Files (.xml)|*.xml|Text Files (.txt)|*.tx" +
                 "t";
             this.keyDefinitionOpenFileDialog.SupportMultiDottedExtensions = true;
-            this.keyDefinitionOpenFileDialog.Title = "Select Key Definition FIle";
+            this.keyDefinitionOpenFileDialog.Title = "Select Key Definition File";
             // 
             // openDefinitionToolStripMenuItem
             // 
@@ -234,6 +236,13 @@
             this.openDefinitionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.openDefinitionToolStripMenuItem.Text = "&Open Definition";
             this.openDefinitionToolStripMenuItem.Click += new System.EventHandler(this.loadKeyDefinitionButton_Click);
+            // 
+            // newDefinitionToolStripMenuItem
+            // 
+            this.newDefinitionToolStripMenuItem.Name = "newDefinitionToolStripMenuItem";
+            this.newDefinitionToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.newDefinitionToolStripMenuItem.Text = "&New Definition";
+            this.newDefinitionToolStripMenuItem.Click += new System.EventHandler(this.newDefinitionToolStripMenuItem_Click);
             // 
             // KeyGenerator
             // 
@@ -282,6 +291,7 @@
         private System.Windows.Forms.Label keyDefinitionLabel;
         private System.Windows.Forms.OpenFileDialog keyDefinitionOpenFileDialog;
         private System.Windows.Forms.ToolStripMenuItem openDefinitionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newDefinitionToolStripMenuItem;
     }
 }
 

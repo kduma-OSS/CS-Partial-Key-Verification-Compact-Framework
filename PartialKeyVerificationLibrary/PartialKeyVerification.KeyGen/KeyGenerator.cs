@@ -32,18 +32,6 @@ namespace PartialKeyVerification.KeyGen
                 GenerateAndSetSeedAndKey();
             else
                 ClearSeedAndKey();
-
-
-//            var def = DefinitionGenerator.MakeDefinition(3);
-//
-//            var dialog = new SaveFileDialog();
-//            if (dialog.ShowDialog() != DialogResult.OK)
-//                return;
-//
-//            DefinitionPersister.SaveToFile(dialog.FileName, def);
-//
-//            _generator = new PartialKeyGenerator(def);
-
         }
 
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
@@ -57,6 +45,24 @@ namespace PartialKeyVerification.KeyGen
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void loadKeyDefinitionButton_Click(object sender, EventArgs e)
+        {
+            if (keyDefinitionOpenFileDialog.ShowDialog() != DialogResult.OK) return;
+
+            LoadDefinitionFile(keyDefinitionOpenFileDialog.FileName);
+        }
+
+        private void newDefinitionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new MakeDefinition())
+            {
+                if (dialog.ShowDialog() != DialogResult.OK)
+                    return;
+
+                LoadDefinitionFile(dialog.FileName);
+            }
         }
 
         private void ClearSeedAndKey()
@@ -84,19 +90,11 @@ namespace PartialKeyVerification.KeyGen
             generatedKeyMaskedTextBox.Text = _generator.Generate(seed);
         }
 
-        private void loadKeyDefinitionButton_Click(object sender, EventArgs e)
-        {
-            if (keyDefinitionOpenFileDialog.ShowDialog() != DialogResult.OK) return;
-
-            LoadDefinitionFile(keyDefinitionOpenFileDialog.FileName);
-
-            keyDefinitionTextBox.Text = keyDefinitionOpenFileDialog.FileName;
-        }
-
         private void LoadDefinitionFile(string fileName)
         {
             _definition = DefinitionPersister.LoadFromFile(fileName);
             _generator = new PartialKeyGenerator(_definition);
+            keyDefinitionTextBox.Text = fileName;
             userNameTextBox.Enabled = true;
             keyDefinitionTextBox.Enabled = true;
             seedTextBox.Enabled = true;
