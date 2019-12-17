@@ -19,7 +19,23 @@ namespace PartialKeyVerification.KeyGen
         public KeyGenerator()
         {
             InitializeComponent();
-            _generator = new PartialKeyGenerator(new Adler16(), new Jenkins96(), new uint[] { 1, 2, 3, 4 }) { Spacing = 6 };
+            _generator = new PartialKeyGenerator(new Adler16(), new Jenkins96(), new uint[] { 1, 2, 3, 4, 5, 6 }) { Spacing = 6 };
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+                GenerateAndSetSeedAndKey();
+            else
+                ClearSeedAndKey();
+        }
+
+        private void userNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+                GenerateAndSetSeedAndKey();
+            else
+                ClearSeedAndKey();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,14 +43,17 @@ namespace PartialKeyVerification.KeyGen
             Close();
         }
 
-        private void userNameTextBox_TextChanged(object sender, EventArgs e)
+        private void ClearSeedAndKey()
         {
-            GenerateAndSetSeedAndKey();
+            seedTextBox.Text = "";
+            generatedKeyTextBox.Text = "";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private bool ValidateForm()
         {
-            GenerateAndSetSeedAndKey();
+            var isValid = !String.IsNullOrEmpty(userNameTextBox.Text);
+            errorProvider.SetError(userNameTextBox, isValid ? "" : "User Name is required");
+            return isValid;
         }
 
         private void GenerateAndSetSeedAndKey()
