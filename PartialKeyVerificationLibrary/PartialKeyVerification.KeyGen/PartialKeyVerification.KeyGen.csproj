@@ -104,13 +104,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PartialKeyVerification.Generator\PartialKeyVerification.Generator.csproj">
+    <ProjectReference Include="..\PartialKeyVerificationLibrary.Generator\PartialKeyVerificationLibrary.Generator.csproj">
       <Project>{85DB3670-F5E9-409E-8E3C-C92645CAFF41}</Project>
-      <Name>PartialKeyVerification.Generator</Name>
+      <Name>PartialKeyVerificationLibrary.Generator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PartialKeyVerification\PartialKeyVerification.csproj">
+    <ProjectReference Include="..\PartialKeyVerificationLibrary.Verificator\PartialKeyVerificationLibrary.Verificator.csproj">
       <Project>{53048C78-DBCE-49CA-8959-0B78A0010E50}</Project>
-      <Name>PartialKeyVerification</Name>
+      <Name>PartialKeyVerificationLibrary.Verificator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
